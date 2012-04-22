@@ -35,6 +35,7 @@ setup(
     long_description=open('README.rst').read(),
     # long_description=load_rst(),
     license="ASL",
+    install_requires = [],
     classifiers = [
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
