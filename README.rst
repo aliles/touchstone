@@ -6,16 +6,6 @@ Derived from my usual project structure
 and `Kenneth Reitz <https://twitter.com/#!/kennethreitz>`_'s repository structure
 `blog post <http://kennethreitz.com/repository-structure-and-python.html>`_.
 
-Usage
------
-
-To unpack touchstone into clean repository. ::
-
-    $ wget -O - https://github.com/aliles/touchstone/tarball/master | tar -s /aliles-touchstone-......././ -zx
-    $ find . -type f -exec sec -i .bak 's/touchstone/NEWNAME/g' {} \;
-
-This will replace all instances of ``touchstone`` with your new project name.
-
 Features
 --------
 
@@ -29,3 +19,38 @@ touchstone has the following features:
 * Prepare Sphinx documentation configuration including intersphinx.
 * Populated MANIFEST.in including tests and documentation in packages.
 * Empty change log.
+
+Set Up
+------
+
+To unpack touchstone into clean repository. ::
+
+    $ wget -O - https://github.com/aliles/touchstone/tarball/master | tar -s /aliles-touchstone-......././ -zx
+    $ find . -type f -exec sed -i .bak 's/touchstone/NEWNAME/g' {} \;
+    $ find . -type f -name \*.bak -exec rm {} \;
+    $ for ORIG in `find . -name \*touchstone\*`; do NEW=`echo $ORIG | sed s/touchstone/NEWNAME/`; mv $ORIG $NEW; done
+
+This will replace all instances of ``touchstone``
+with your new project name.
+You should also edit this README.rst file.
+
+The ``requirements.txt`` file has been populated
+with dependencies for documentation
+and static type analysis.
+To install these dependencies
+execute make's ``deps`` target. ::
+
+    $ make deps
+
+Make Targets
+------------
+
+The makefile has the following targets:
+
+* ``deps``, install Python dependencies using ``pip``.
+* ``docs``, build package documention using ``Sphinx``.
+* ``lint``, static code analysis of package using ``flake8``.
+* ``dist``, build source distribution for package.
+* ``tests``, run unit tests using test runner from ``setup.py``.
+* ``unittest``, run unit tests using ``unittest`` module test runner.
+* ``clean``, remove all build artifacts.
