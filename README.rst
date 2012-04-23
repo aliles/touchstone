@@ -27,6 +27,7 @@ To unpack touchstone into clean repository. ::
 
     $ wget -O - https://github.com/aliles/touchstone/tarball/master | tar -s /aliles-touchstone-......././ -zx
     $ find . -type f -exec sed -i .bak 's/touchstone/NEWNAME/g' {} \;
+    $ find . -type f -exec sed -i .bak 's/TestTouchstone/TestNEWNAME/g' {} \;
     $ find . -type f -name \*.bak -exec rm {} \;
     $ for ORIG in `find . -name \*touchstone\*`; do NEW=`echo $ORIG | sed s/touchstone/NEWNAME/`; mv $ORIG $NEW; done
 
