@@ -4,7 +4,7 @@ deps:
 	pip install -r requirements.txt
 
 lint:
-	flake8 --exit-zero touchstone
+	flake8 --exit-zero touchstone tests
 
 dist:
 	python setup.py sdist
