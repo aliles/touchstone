@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 
 deps:
-	pip install -r requirements.txt
+	pip install -r requirements/development.txt \
+	            -r requirements/production.txt
 
 lint:
 	flake8 --exit-zero touchstone tests
