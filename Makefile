@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 
 deps:
-	pip install -r requirements/development.txt \
+	pip install --upgrade --use-mirrors \
+	            -r requirements/development.txt \
 	            -r requirements/production.txt
 
 lint:
