@@ -36,8 +36,9 @@ with your new project name.
 You should also edit this README.rst file.
 
 The ``requirements.txt`` file has been populated
-with dependencies for documentation
-and static type analysis.
+with dependencies for documentation,
+static type analysis
+and test coverage.
 To install these dependencies
 execute make's ``deps`` target. ::
 
@@ -54,4 +55,5 @@ The makefile has the following targets:
 * ``dist``, build source distribution for package.
 * ``tests``, run unit tests using test runner from ``setup.py``.
 * ``unittest``, run unit tests using ``unittest`` module test runner.
+* ``coverage``, generate coverage report from test coverage.
 * ``clean``, remove all build artifacts.
