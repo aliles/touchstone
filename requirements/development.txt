@@ -1,3 +1,5 @@
 coverage
+distribute
+pip
 flake8
 sphinx
