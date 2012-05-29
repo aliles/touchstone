@@ -21,7 +21,7 @@ unittest:
 	coverage run -m unittest
 
 coverage:
-	coverage report --include="touchstone*"
+	coverage report --show-missing --include="touchstone*"
 
 clean:
 	find . -type f -name "*.pyc" -exec rm '{}' +
