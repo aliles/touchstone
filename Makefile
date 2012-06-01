@@ -5,11 +5,11 @@ deps:
 	            -r requirements/development.txt \
 	            -r requirements/production.txt
 
-lint:
-	flake8 --exit-zero touchstone tests
-
 sdist:
 	python setup.py sdist
+
+# register:
+# 	python setup.py register
 
 site:
 	cd docs; make html
@@ -19,6 +19,9 @@ test:
 
 unittest:
 	coverage run -m unittest
+
+lint:
+	flake8 --exit-zero touchstone tests
 
 coverage:
 	coverage report --show-missing --include="touchstone*"
