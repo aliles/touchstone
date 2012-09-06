@@ -4,6 +4,7 @@ use_setuptools()
 
 from setuptools import setup
 import re
+import sys
 
 def load_version(filename='touchstone/version.py'):
     "Parse a __version__ number from a source file"
@@ -51,5 +52,6 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
-    test_suite = "tests"
+    tests_require = [] if sys.version_info[0] > 2 else ['unittest2'],
+    test_suite = "tests" if sys.version_info[0] > 2 else 'unittest2.collector'
 )
