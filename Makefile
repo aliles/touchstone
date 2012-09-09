@@ -18,7 +18,7 @@ test:
 	coverage run setup.py test
 
 unittest:
-	coverage run -m unittest
+	coverage run -m unittest discover
 
 lint:
 	flake8 --exit-zero touchstone tests
