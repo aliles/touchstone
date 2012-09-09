@@ -5,6 +5,8 @@ except ImportError:
     # python 3.x
     import unittest
 
+import doctest
+
 import touchstone
 
 
@@ -12,3 +14,6 @@ class TestTouchstone(unittest.TestCase):
 
     def test_has_version(self):
         self.assertTrue(touchstone.__version__)
+
+    def test_readme(self):
+        doctest.testfile('../README.rst')
