@@ -33,7 +33,9 @@ To unpack touchstone into clean repository. ::
 
 This will replace all instances of ``touchstone``
 with your new project name.
-You should also edit this README.rst file.
+**You also need to edit
+the README.rst 
+and LICENSE files.**
 
 The ``requirements.txt`` file has been populated
 with dependencies for documentation,
