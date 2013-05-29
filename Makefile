@@ -8,8 +8,9 @@ deps:
 sdist:
 	python setup.py sdist
 
-# register:
-# 	python setup.py register
+register:
+	python setup.py register
+	python setup.py sdist upload
 
 site:
 	cd docs; make html
