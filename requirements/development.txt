@@ -4,3 +4,4 @@ distribute
 pip
 flake8
 sphinx
+wheel

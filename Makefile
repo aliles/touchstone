@@ -5,12 +5,16 @@ deps:
 	            -r requirements/development.txt \
 	            -r requirements/production.txt
 
-sdist:
+build:
 	python setup.py sdist
+	python setup.py bdist_wheel
 
 register:
 	python setup.py register
+
+upload:
 	python setup.py sdist upload
+	python setup.py bdist_wheel upload
 
 site:
 	cd docs; make html
@@ -25,7 +29,7 @@ lint:
 	flake8 --exit-zero touchstone tests
 
 coverage:
-	coverage report --show-missing --include="touchstone*"
+	coverage report --show-missing
 
 clean:
 	python setup.py clean --all
