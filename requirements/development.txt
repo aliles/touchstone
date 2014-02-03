@@ -1,6 +1,5 @@
 coverage
 coveralls
-distribute
 pip
 flake8
 sphinx
